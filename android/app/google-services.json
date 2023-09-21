@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:87548292752:android:b73c9d1cd99ae354b47215",
+        "mobilesdk_app_id": "1:87548292752:android:5899ea34b40b1c01b47215",
         "android_client_info": {
-          "package_name": "co.genex.flash_chat"
+          "package_name": "co.PrinceTayal26.flash_chat"
         }
       },
       "oauth_client": [],
