@@ -4,6 +4,7 @@ import 'package:flash_chat/screens/login_screen.dart';
 import 'package:flash_chat/screens/registration_screen.dart';
 import 'package:flash_chat/screens/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 //void main() => runApp(FlashChat());
 
@@ -14,6 +15,9 @@ void main() async {
 }
 
 class FlashChat extends StatelessWidget {
+
+  late final _auth=FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context)  {
     return MaterialApp(
@@ -22,7 +26,7 @@ class FlashChat extends StatelessWidget {
           bodyLarge: TextStyle(color: Colors.black54),
         ),
       ),
-      initialRoute: WelcomeScreen.id,
+      initialRoute: _auth.currentUser != null ?ChatScreen.id :WelcomeScreen.id,
       routes: {
         WelcomeScreen.id:(context)=>WelcomeScreen(),
         ChatScreen.id: (context)=> ChatScreen(),
